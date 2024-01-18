@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import useFetch from "./FetchUser";
-
+import axios from "axios";
 function EditUser() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({
@@ -10,7 +10,9 @@ function EditUser() {
     gender: "",
   });
   const [data, loading, error] = useFetch("http://localhost:3001/users");
+  const [editingUserId, setEditingUserId] = useState(null);
 
+  console.log("id", editingUserId);
   useEffect(() => {
     setUsers(data);
   }, [data]);
@@ -18,6 +20,57 @@ function EditUser() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewUser({ ...newUser, [name]: value });
+  };
+
+  // const handleEditUser = () => {
+  //   fetch(`http://localhost:3001/users/${editingUserId}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newUser),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((updatedUser) => {
+  //       const updatedUsers = users.map((user) =>
+  //         user.id === editingUserId ? updatedUser : user
+  //       );
+  //       setUsers(updatedUsers);
+  //       setEditingUserId(null);
+  //       setNewUser({ email: "", password: "", gender: "" });
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error editing user:", error);
+  //     });
+  // };
+
+  const handleEditUser = async (e) => {
+    // Get Id
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:3001/users/${editingUserId}`, newUser);
+
+      // Fetch the updated data
+      const updatedData = await axios.get("http://localhost:3001/users");
+
+      // Update the local state with the new data
+      setUsers(updatedData.data);
+
+      // Reset the editing state and form
+      setEditingUserId(null);
+      setNewUser({ email: "", password: "", gender: "" });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleEditButton = (user) => {
+    setEditingUserId(user.id);
+    setNewUser({
+      email: user.email,
+      password: user.password,
+      gender: user.gender,
+    });
   };
 
   const handleAddUser = (e) => {
@@ -62,7 +115,10 @@ function EditUser() {
         <div className="card-body">
           <h5 className="card-title mb-3">Input Users</h5>
 
-          <form onSubmit={handleAddUser} style={{ color: "black" }}>
+          <form
+            onSubmit={editingUserId ? handleEditUser : handleAddUser}
+            style={{ color: "black" }}
+          >
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -104,7 +160,7 @@ function EditUser() {
               className="btn btn-primary"
               style={{ marginTop: "10px", width: "300px", fontSize: "20px" }}
             >
-              Submit
+              {editingUserId ? "Edit" : "Submit"}
             </button>
           </form>
         </div>
@@ -130,7 +186,7 @@ function EditUser() {
                     <button
                       className="btn btn-success"
                       style={{ marginRight: "5px" }}
-                      onClick={() => handleDeleteUser(user.id)}
+                      onClick={() => handleEditButton(user)}
                     >
                       Edit
                     </button>

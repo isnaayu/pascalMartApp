@@ -9,8 +9,8 @@ import EditUser from "./components/EditUser";
 function App() {
   return (
     <>
-      <InputData />
-      {/* <EditUser /> */}
+      {/* <InputData /> */}
+      <EditUser />
     </>
   );
 }
