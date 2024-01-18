@@ -1,0 +1,30 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "a title",
+      "email": "alvin@gmail.com",
+      "password": "jajak",
+      "gender": "Male"
+    },
+    {
+      "id": "8bfa",
+      "name": "alvin",
+      "email": "deni",
+      "password": "sad",
+      "gender": "pria"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ]
+}
