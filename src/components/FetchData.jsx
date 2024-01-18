@@ -5,7 +5,7 @@ const useFetch = (url) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/items")
+    fetch("http://localhost:8000/items")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((error) => console.error("Fetch error"));

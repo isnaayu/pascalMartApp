@@ -1,19 +1,5 @@
 {
-  "items": [
-    {
-      "0": {
-        "name": "burger",
-        "qty": "2",
-        "price": "30000"
-      },
-      "1": {
-        "name": "minuman",
-        "qty": "2",
-        "price": "20000"
-      },
-      "id": "900e"
-    }
-  ],
+  "items": [],
   "users": [
     {
       "id": "7a4e",
@@ -32,6 +18,40 @@
       "email": "jakasembung@gmail.com",
       "password": "sembung",
       "gender": "apa"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1705572715827,
+      "items": [
+        {
+          "name": "mie",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "pop",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705573011448,
+      "items": [
+        {
+          "name": "tono",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "botol",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
     }
   ]
 }
