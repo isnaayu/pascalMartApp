@@ -16,22 +16,30 @@
   ],
   "users": [
     {
-      "id": "7a4e",
-      "email": "petot@gmail.com",
-      "password": "petotaja",
-      "gender": "ga tau"
+      "id": "1",
+      "name": "a title",
+      "email": "alvin@gmail.com",
+      "password": "jajak",
+      "gender": "Male"
     },
     {
-      "id": "acc5",
-      "email": "udin@gmail.com",
-      "password": "dinper",
-      "gender": "laki"
+      "id": "8bfa",
+      "name": "alvin",
+      "email": "deni",
+      "password": "sad",
+      "gender": "pria"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
     },
     {
-      "id": "abee",
-      "email": "jakasembung@gmail.com",
-      "password": "sembung",
-      "gender": "apa"
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
     }
   ]
 }
