@@ -1,0 +1,36 @@
+{
+  "barang": [
+    {
+      "id": 1,
+      "nama_barang": "Adidas",
+      "harga": 100000,
+      "quantity": 100
+    },
+    {
+      "id": 2,
+      "nama_barang": "Nike",
+      "harga": 100000,
+      "quantity": 100
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "nama_barang": "Adidas",
+      "quantity": 100,
+      "sub_total": 10000000
+    },
+    {
+      "id": 2,
+      "nama_barang": "Nike",
+      "quantity": 1,
+      "sub_total": 100000
+    },
+    {
+      "id": 2,
+      "nama_barang": "Nike",
+      "quantity": 100,
+      "sub_total": 10000000
+    }
+  ]
+}
