@@ -13,7 +13,6 @@ import {
   Spacer,
   TableContainer,
   Table,
-  TableCaption,
   Thead,
   Tr,
   Th,
@@ -26,14 +25,14 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-export default function ItemPurchaseRecap({ props }) {
+export default function ItemPurchaseRecap({ transaction }) {
   return (
     <Card boxShadow="md">
       <CardHeader backgroundColor="">
         <Flex minWidth="max-content" alignItems="center" gap="2">
           <Heading size="md">Transaction</Heading>
           <Spacer />
-          <Tag>NB213</Tag>
+          <Tag>{transaction.id}</Tag>
         </Flex>
       </CardHeader>
 
@@ -61,21 +60,14 @@ export default function ItemPurchaseRecap({ props }) {
                         </Tr>
                       </Thead>
                       <Tbody>
-                        <Tr>
-                          <Td>inches</Td>
-                          <Td>millimetres (mm)</Td>
-                          <Td isNumeric>25.4</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>feet</Td>
-                          <Td>centimetres (cm)</Td>
-                          <Td isNumeric>30.48</Td>
-                        </Tr>
-                        <Tr>
-                          <Td>yards</Td>
-                          <Td>metres (m)</Td>
-                          <Td isNumeric>0.91444</Td>
-                        </Tr>
+                        {transaction.items &&
+                          transaction.items.map((item) => (
+                            <Tr>
+                              <Td>{item.nama_barang}</Td>
+                              <Td>{item.quantity}</Td>
+                              <Td isNumeric>Rp. {item.sub_total}</Td>
+                            </Tr>
+                          ))}
                       </Tbody>
                     </Table>
                   </TableContainer>
@@ -89,7 +81,9 @@ export default function ItemPurchaseRecap({ props }) {
                 Total
               </Heading>
               <Spacer />
-              <Text ontSize="sm">Rp. 12.000.000</Text>
+              <Text>
+                Rp. <strong>{transaction.total_price}</strong>
+              </Text>
             </Flex>
           </Box>
         </Stack>

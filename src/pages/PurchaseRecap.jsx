@@ -4,14 +4,29 @@ import { Container, SimpleGrid, Box } from "@chakra-ui/react";
 import ItemPurchaseRecap from "../component/ItemPurchaseRecap";
 
 export default function PurchaseRecap() {
+
+  const [data, setData] = React.useState(null)
+
+  React.useEffect(() => {
+    fetch("http://localhost:3000/transactions")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Fetch error", error))
+  }, [])
+
+
+
+
+
   return (
     <>
       <SimpleGrid columns={[2, null, 3]} spacing="5" m="10">
-        <ItemPurchaseRecap></ItemPurchaseRecap>
-        <ItemPurchaseRecap></ItemPurchaseRecap>
-        <ItemPurchaseRecap></ItemPurchaseRecap>
-        <ItemPurchaseRecap></ItemPurchaseRecap>
-        <ItemPurchaseRecap></ItemPurchaseRecap>
+         {data &&
+            data.map((transaction) => ( 
+              <ItemPurchaseRecap transaction={transaction} key={transaction.id}></ItemPurchaseRecap>
+            ))}
+        
+        
       </SimpleGrid>
     </>
   );
