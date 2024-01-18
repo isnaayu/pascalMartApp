@@ -1,0 +1,46 @@
+{
+    "transactions": [
+        {
+            "id": 1,
+            "items": [
+                {
+                    "id": 1,
+                    "nama_barang": "Adidas",
+                    "quantity": 100,
+                    "sub_total": 10000000
+                }
+            ],
+            "total_price": 40000000
+        },
+        {
+            "id": 2,
+            "items": [
+                {
+                    "id": 2,
+                    "nama_barang": "Nike",
+                    "quantity": 1,
+                    "sub_total": 100000
+                }
+            ],
+            "total_price": 40000000
+        },
+        {
+            "id": 3,
+            "items": [
+                {
+                    "id": 3,
+                    "nama_barang": "Puma",
+                    "quantity": 5,
+                    "sub_total": 500000
+                },
+                {
+                    "id": 4,
+                    "nama_barang": "Reebok",
+                    "quantity": 2,
+                    "sub_total": 200000
+                }
+            ],
+            "total_price": 7000000
+        }
+    ]
+}
