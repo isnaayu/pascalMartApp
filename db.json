@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "1e0c",
+      "name": "Mie Sedap Spagetti",
+      "qty": "10",
+      "price": 5000
+    },
+    {
+      "id": "2650",
+      "name": "Mie Triple Rendang",
+      "qty": "3",
+      "price": 4500
+    },
+    {
+      "id": "0a8e",
+      "name": "Bond Chilli",
+      "qty": "2",
+      "price": 16000
+    }
+  ]
+}
