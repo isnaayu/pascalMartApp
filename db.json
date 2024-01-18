@@ -1,36 +1,37 @@
 {
-  "barang": [
+  "items": [
     {
-      "id": 1,
-      "nama_barang": "Adidas",
-      "harga": 100000,
-      "quantity": 100
-    },
-    {
-      "id": 2,
-      "nama_barang": "Nike",
-      "harga": 100000,
-      "quantity": 100
+      "0": {
+        "name": "burger",
+        "qty": "2",
+        "price": "30000"
+      },
+      "1": {
+        "name": "minuman",
+        "qty": "2",
+        "price": "20000"
+      },
+      "id": "900e"
     }
   ],
-  "transactions": [
+  "users": [
     {
-      "id": 1,
-      "nama_barang": "Adidas",
-      "quantity": 100,
-      "sub_total": 10000000
+      "id": "7a4e",
+      "email": "petot@gmail.com",
+      "password": "petotaja",
+      "gender": "ga tau"
     },
     {
-      "id": 2,
-      "nama_barang": "Nike",
-      "quantity": 1,
-      "sub_total": 100000
+      "id": "acc5",
+      "email": "udin@gmail.com",
+      "password": "dinper",
+      "gender": "laki"
     },
     {
-      "id": 2,
-      "nama_barang": "Nike",
-      "quantity": 100,
-      "sub_total": 10000000
+      "id": "abee",
+      "email": "jakasembung@gmail.com",
+      "password": "sembung",
+      "gender": "apa"
     }
   ]
 }
