@@ -1,22 +1,37 @@
 {
   "items": [
     {
-      "id": "1e0c",
-      "name": "Mie Sedap Spagetti",
-      "qty": "10",
-      "price": 5000
+      "0": {
+        "name": "burger",
+        "qty": "2",
+        "price": "30000"
+      },
+      "1": {
+        "name": "minuman",
+        "qty": "2",
+        "price": "20000"
+      },
+      "id": "900e"
+    }
+  ],
+  "users": [
+    {
+      "id": "7a4e",
+      "email": "petot@gmail.com",
+      "password": "petotaja",
+      "gender": "ga tau"
     },
     {
-      "id": "2650",
-      "name": "Mie Triple Rendang",
-      "qty": "3",
-      "price": 4500
+      "id": "acc5",
+      "email": "udin@gmail.com",
+      "password": "dinper",
+      "gender": "laki"
     },
     {
-      "id": "0a8e",
-      "name": "Bond Chilli",
-      "qty": "2",
-      "price": 16000
+      "id": "abee",
+      "email": "jakasembung@gmail.com",
+      "password": "sembung",
+      "gender": "apa"
     }
   ]
 }

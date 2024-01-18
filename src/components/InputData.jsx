@@ -17,6 +17,11 @@ function InputData() {
     setNewItems({ ...newItems, [name]: value });
   };
 
+  const datas = [];
+
+  datas.push(items);
+  console.log(datas);
+
   const handleAddItems = (e) => {
     e.preventDefault();
 
@@ -24,37 +29,61 @@ function InputData() {
 
     if (!isNaN(priceAsInteger)) {
       // Menyiapkan payload dengan price yang sudah diubah ke integer
-      const payload = {
+      const newItem = {
         name: newItems.name,
         qty: newItems.qty,
         price: priceAsInteger,
       };
 
-      fetch("http://localhost:3001/items", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setItems([...items, data]);
-          setNewItems({ name: "", qty: "", price: 0 });
-        })
-        .catch((error) => console.error("Fetch error", error));
+      setItems([...items, newItems]);
+
+      setNewItems({ name: "", qty: "", price: 0 });
+
+      //   fetch("http://localhost:3001/items", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(payload),
+      //   })
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       setItems([...items, data]);
+      //       setNewItems({ name: "", qty: "", price: 0 });
+      //     })
+      //     .catch((error) => console.error("Fetch error", error));
     }
   };
 
-  const handleDeleteItems = (id) => {
-    fetch(`http://localhost:3001/items/${id}`, {
-      method: "DELETE",
+  const handleBuy = () => {
+    fetch("http://localhost:3001/items", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(items),
     })
       .then((res) => res.json())
       .then((data) => {
-        setItems(items.filter((item) => item.id !== id));
+        setItems([]);
+        console.log("success");
       })
       .catch((error) => console.error("Fetch error", error));
+  };
+
+  const handleDeleteItems = (index) => {
+    // fetch(`http://localhost:3001/items/${id}`, {
+    //   method: "DELETE",
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setItems(items.filter((item) => item.id !== id));
+    //   })
+    //   .catch((error) => console.error("Fetch error", error));
+
+    const updatedItems = [...items];
+    updatedItems.splice(index, 1);
+    setItems(updatedItems);
   };
 
   return (
@@ -112,6 +141,14 @@ function InputData() {
               Submit
             </button>
           </form>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ marginTop: "10px", width: "300px", fontSize: "20px" }}
+            onClick={handleBuy}
+          >
+            Buy
+          </button>
         </div>
         <table className="table table-striped">
           <thead>
@@ -125,16 +162,16 @@ function InputData() {
           </thead>
           <tbody>
             {items &&
-              items.map((item) => (
-                <tr key={item.id}>
-                  <th scope="row">{item.id}</th>
+              items.map((item, index) => (
+                <tr key={index}>
+                  <th scope="row">{index + 1}</th>
                   <td>{item.name}</td>
                   <td>{item.qty}</td>
                   <td>{item.price}</td>
                   <td>
                     <button
                       className="btn btn-danger"
-                      onClick={() => handleDeleteItems(item.id)}
+                      onClick={() => handleDeleteItems(index)}
                     >
                       Delete
                     </button>
