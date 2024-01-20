@@ -1,0 +1,129 @@
+{
+  "items": [
+    {
+      "0": {
+        "name": "ayam",
+        "qty": "2",
+        "price": "30000"
+      },
+      "1": {
+        "name": "timun",
+        "qty": "2",
+        "price": "20000"
+      },
+      "id": "71f0"
+    }
+  ],
+  "users": [
+    {
+      "email": "udin@gmail.com",
+      "password": "dinper2",
+      "gender": "laki",
+      "id": "acc5"
+    },
+    {
+      "id": "4fcd",
+      "email": "ui@gmail",
+      "password": "dd",
+      "gender": "m"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1705572715827",
+      "items": [
+        {
+          "name": "mie",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "pop",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": "1705573011448",
+      "items": [
+        {
+          "name": "tono",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "botol",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705736664350,
+      "items": [
+        {
+          "name": "ayam potong",
+          "qty": "2",
+          "price": 20000
+        },
+        {
+          "name": "sendok",
+          "qty": "1",
+          "price": 5000
+        }
+      ],
+      "total_price": 25000
+    },
+    {
+      "id": 1705752898637,
+      "items": [
+        {
+          "name": "timun",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "ayam",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705753104090,
+      "items": [
+        {
+          "name": "babi",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "sendal",
+          "qty": "2",
+          "price": 20000
+        }
+      ],
+      "total_price": 30000
+    },
+    {
+      "id": 1705775119222,
+      "items": [
+        {
+          "name": "bihun",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "Sendal",
+          "qty": "3",
+          "price": 15000
+        }
+      ],
+      "total_price": 25000
+    }
+  ]
+}
