@@ -1,3 +1,5 @@
+import { ChakraProvider } from '@chakra-ui/react'
+import PurchaseRecap from './pages/PurchaseRecap'
 import { useState } from "react";
 import LandingPage from "./component/LandingPage";
 import EditUser from "./component/EditUser";
@@ -19,6 +21,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/editUser" element={<EditUser />} />
           <Route path="/inputData" element={<InputData />} />
+          <Route path="/purchase" element={<PurchaseRecap />} />
         </Routes>
       </Router>
     </>
