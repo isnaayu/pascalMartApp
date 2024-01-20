@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const add = await axios.post("http://localhost:3001/user", {
+      const add = await axios.post("http://localhost:8000/users", {
         name,
         email,
         password,

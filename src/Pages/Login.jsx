@@ -17,15 +17,15 @@ const Login = () => {
   const Validate = async (e) => {
     e.preventDefault();
 
-    const getDatas = await axios.get("http://localhost:3001/user");
+    const getDatas = await axios.get("http://localhost:8000/users");
     const getAll = getDatas.data;
-
+    console.log(getDatas);
     for (const data of getAll) {
       if (data.email === email && data.password === password) {
         setLoading(true);
         localStorage.setItem("token", "true");
         setTimeout(() => {
-          navigate("/home");
+          navigate("/inputData");
         }, 2000);
       } else {
         console.log("ga ada");

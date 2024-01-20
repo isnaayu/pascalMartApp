@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import useFetch from "./FetchUser";
+import WithAuth from "../HOC/WithAuth";
 
 function EditUser() {
   const [users, setUsers] = useState([]);
@@ -150,4 +151,4 @@ function EditUser() {
   );
 }
 
-export default EditUser;
+export default WithAuth(EditUser);

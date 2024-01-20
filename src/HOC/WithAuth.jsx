@@ -12,6 +12,8 @@ const WithAuth = (WrappedComponent) => {
         } else {
           navigate("/login");
         }
+
+        console.log(token);
       };
 
       checkAuthentication();

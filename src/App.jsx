@@ -3,7 +3,9 @@ import { useState } from "react";
 import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
-import InputData2 from "./components/InputData2";
+import EditUser from "./components/EditUser";
+import InputData from "./components/InputData";
+
 function App() {
   return (
     <>
@@ -11,7 +13,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/input" element={<InputData2 />} />
+          <Route path="/editUser" element={<EditUser />} />
+          <Route path="/inputData" element={<InputData />} />
         </Routes>
       </Router>
     </>

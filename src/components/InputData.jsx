@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import useFetch from "./FetchData";
+import WithAuth from "../HOC/WithAuth";
 
 function InputData() {
   const [items, setItems] = useState([]);
@@ -185,4 +186,4 @@ function InputData() {
   );
 }
 
-export default InputData;
+export default WithAuth(InputData);
