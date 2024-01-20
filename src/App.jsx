@@ -1,6 +1,6 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import PurchaseRecap from './pages/PurchaseRecap'
-import { useState } from "react";
+// import { ChakraProvider } from '@chakra-ui/react'
+// // import PurchaseRecap from './pages/PurchaseRecap'
+// import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/pages/home/Home';
 import Users from './components/pages/users/Users';
@@ -16,6 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/edit-user" element={<Users />} />
           <Route path="/input-data" element={<InputData />} />
           <Route path="/transaction" element={<Transactions />} />

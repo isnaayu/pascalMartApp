@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
-import "../Style/style.css";
+// import "../Style/style.css";
+import "../../../assets/css/style.css";
 import { Input } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +26,7 @@ const Login = () => {
         setLoading(true);
         localStorage.setItem("token", "true");
         setTimeout(() => {
-          navigate("/inputData");
+          navigate("/");
         }, 2000);
       } else {
         console.log("ga ada");

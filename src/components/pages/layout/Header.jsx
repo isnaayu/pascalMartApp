@@ -11,7 +11,7 @@ const Header = () => {
         <Link className="px-2 LinkNav" to={"/"}>Home</Link>
         </li>
         <li className="nav-item">
-        <Link className="px-2 LinkNav" to={"/editUser"}>Edit User</Link>
+        <Link className="px-2 LinkNav" to={"/edit-user"}>Edit User</Link>
         </li>
         <li className="nav-item">
         <Link className="px-2 LinkNav" to={"/input-data"}>Input Data</Link>
