@@ -78,7 +78,7 @@ function EditUser() {
   const handleAddUser = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3001/users", {
+    fetch("http://localhost:8000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function EditUser() {
   };
 
   const handleDeleteUser = (id) => {
-    fetch(`http://localhost:3001/users/${id}`, {
+    fetch(`http://localhost:8000/users/${id}`, {
       method: "DELETE",
     })
       .then(() => {

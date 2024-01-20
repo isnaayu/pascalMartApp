@@ -2,16 +2,16 @@
   "items": [
     {
       "0": {
-        "name": "burger",
+        "name": "ayam",
         "qty": "2",
         "price": "30000"
       },
       "1": {
-        "name": "minuman",
+        "name": "timun",
         "qty": "2",
         "price": "20000"
       },
-      "id": "900e"
+      "id": "71f0"
     }
   ],
   "users": [
@@ -44,46 +44,84 @@
   ],
   "transactions": [
     {
-      "id": 1,
+      "id": "1705572715827",
       "items": [
         {
-          "id": 1,
-          "nama_barang": "Adidas",
-          "quantity": 100,
-          "sub_total": 10000000
-        }
-      ],
-      "total_price": 40000000
-    },
-    {
-      "id": 2,
-      "items": [
-        {
-          "id": 2,
-          "nama_barang": "Nike",
-          "quantity": 1,
-          "sub_total": 100000
-        }
-      ],
-      "total_price": 40000000
-    },
-    {
-      "id": 3,
-      "items": [
-        {
-          "id": 3,
-          "nama_barang": "Puma",
-          "quantity": 5,
-          "sub_total": 500000
+          "name": "mie",
+          "qty": "2",
+          "price": 10000
         },
         {
-          "id": 4,
-          "nama_barang": "Reebok",
-          "quantity": 2,
-          "sub_total": 200000
+          "name": "pop",
+          "qty": "2",
+          "price": 10000
         }
       ],
-      "total_price": 7000000
+      "total_price": 20000
+    },
+    {
+      "id": "1705573011448",
+      "items": [
+        {
+          "name": "tono",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "botol",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705736664350,
+      "items": [
+        {
+          "name": "ayam potong",
+          "qty": "2",
+          "price": 20000
+        },
+        {
+          "name": "sendok",
+          "qty": "1",
+          "price": 5000
+        }
+      ],
+      "total_price": 25000
+    },
+    {
+      "id": 1705752898637,
+      "items": [
+        {
+          "name": "timun",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "ayam",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705753104090,
+      "items": [
+        {
+          "name": "babi",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "sendal",
+          "qty": "2",
+          "price": 20000
+        }
+      ],
+      "total_price": 30000
     }
   ]
 }

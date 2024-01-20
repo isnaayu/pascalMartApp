@@ -1,12 +1,15 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import PurchaseRecap from './pages/PurchaseRecap'
 import { useState } from "react";
+import "./App.css";
 import LandingPage from "./component/LandingPage";
 import EditUser from "./component/EditUser";
 import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import InputData from "./components/InputData";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Transaction from "./components/Transaction";
 
 function App() {
   return (
@@ -14,7 +17,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/transaction" element={<></>} />
           <Route path="/edit" element={<EditUser />} />
           <Route path="/recap" element={<></>} />
           <Route path="/login" element={<Login />} />
@@ -22,6 +24,7 @@ function App() {
           <Route path="/editUser" element={<EditUser />} />
           <Route path="/inputData" element={<InputData />} />
           <Route path="/purchase" element={<PurchaseRecap />} />
+          <Route path="/transaction" element={<Transaction />} />
         </Routes>
       </Router>
     </>
