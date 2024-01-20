@@ -1,27 +1,27 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import PurchaseRecap from './pages/PurchaseRecap'
 import { useState } from "react";
-import "./App.css";
-import LandingPage from "./component/LandingPage";
-import EditUser from "./components/EditUser";
-import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./Pages/Register";
-import InputData from "./components/InputData";
-import Transaction from "./components/Transaction";
+import Home from './components/pages/home/Home';
+import Users from './components/pages/users/Users';
+import InputData from './components/pages/transactions/InputData';
+import Transactions from './components/pages/transactions/Transactions';
+import RecapTransactions from './components/pages/transactions/RecapTransactions';
+import Login from './components/pages/auth/Login';
+import Register from './components/pages/auth/Register';
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/edit-user" element={<Users />} />
+          <Route path="/input-data" element={<InputData />} />
+          <Route path="/transaction" element={<Transactions />} />
+          <Route path="/recap-trx" element={<RecapTransactions />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/editUser" element={<EditUser />} />
-          <Route path="/inputData" element={<InputData />} />
-          <Route path="/purchase" element={<PurchaseRecap />} />
-          <Route path="/transaction" element={<Transaction />} />
         </Routes>
       </Router>
     </>

@@ -16,10 +16,10 @@
   ],
   "users": [
     {
-      "id": "acc5",
       "email": "udin@gmail.com",
-      "password": "dinper",
-      "gender": "laki"
+      "password": "dinper2",
+      "gender": "laki",
+      "id": "acc5"
     },
     {
       "id": "4fcd",
@@ -108,6 +108,22 @@
         }
       ],
       "total_price": 30000
+    },
+    {
+      "id": 1705775119222,
+      "items": [
+        {
+          "name": "bihun",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "Sendal",
+          "qty": "3",
+          "price": 15000
+        }
+      ],
+      "total_price": 25000
     }
   ]
 }
