@@ -3,12 +3,11 @@ import PurchaseRecap from './pages/PurchaseRecap'
 import { useState } from "react";
 import "./App.css";
 import LandingPage from "./component/LandingPage";
-import EditUser from "./component/EditUser";
+import EditUser from "./components/EditUser";
 import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./Pages/Register";
 import InputData from "./components/InputData";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Transaction from "./components/Transaction";
 
 function App() {
@@ -17,8 +16,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/edit" element={<EditUser />} />
-          <Route path="/recap" element={<></>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/editUser" element={<EditUser />} />

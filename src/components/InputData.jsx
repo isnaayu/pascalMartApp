@@ -4,6 +4,7 @@ import { useState } from "react";
 import useFetch from "./FetchData";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import WithAuth from "../HOC/WithAuth";
 function InputData() {
     const navigate = useNavigate();
 

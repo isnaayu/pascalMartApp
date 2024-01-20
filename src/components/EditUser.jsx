@@ -11,7 +11,7 @@ function EditUser() {
     password: "",
     gender: "",
   });
-  const [data, loading, error] = useFetch("http://localhost:3001/users");
+  const [data, loading, error] = useFetch("http://localhost:8000/users");
   const [editingUserId, setEditingUserId] = useState(null);
 
   console.log("id", editingUserId);
@@ -24,36 +24,14 @@ function EditUser() {
     setNewUser({ ...newUser, [name]: value });
   };
 
-  // const handleEditUser = () => {
-  //   fetch(`http://localhost:3001/users/${editingUserId}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(newUser),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((updatedUser) => {
-  //       const updatedUsers = users.map((user) =>
-  //         user.id === editingUserId ? updatedUser : user
-  //       );
-  //       setUsers(updatedUsers);
-  //       setEditingUserId(null);
-  //       setNewUser({ email: "", password: "", gender: "" });
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error editing user:", error);
-  //     });
-  // };
-
   const handleEditUser = async (e) => {
     // Get Id
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3001/users/${editingUserId}`, newUser);
+      await axios.put(`http://localhost:8000/users/${editingUserId}`, newUser);
 
       // Fetch the updated data
-      const updatedData = await axios.get("http://localhost:3001/users");
+      const updatedData = await axios.get("http://localhost:8000/users");
 
       // Update the local state with the new data
       setUsers(updatedData.data);
@@ -208,4 +186,4 @@ function EditUser() {
   );
 }
 
-export default WithAuth(EditUser);
+export default EditUser;

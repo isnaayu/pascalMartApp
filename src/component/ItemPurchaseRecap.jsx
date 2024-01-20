@@ -63,9 +63,9 @@ export default function ItemPurchaseRecap({ transaction }) {
                         {transaction.items &&
                           transaction.items.map((item) => (
                             <Tr>
-                              <Td>{item.nama_barang}</Td>
-                              <Td>{item.quantity}</Td>
-                              <Td isNumeric>Rp. {item.sub_total}</Td>
+                              <Td>{item.name}</Td>
+                              <Td>{item.qty}</Td>
+                              <Td isNumeric>Rp. {item.price}</Td>
                             </Tr>
                           ))}
                       </Tbody>

@@ -16,30 +16,16 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "a title",
-      "email": "alvin@gmail.com",
-      "password": "jajak",
-      "gender": "Male"
+      "id": "acc5",
+      "email": "udin@gmail.com",
+      "password": "dinper",
+      "gender": "laki"
     },
     {
-      "id": "8bfa",
-      "name": "alvin",
-      "email": "deni",
-      "password": "sad",
-      "gender": "pria"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "id": "4fcd",
+      "email": "ui@gmail",
+      "password": "dd",
+      "gender": "m"
     }
   ],
   "transactions": [

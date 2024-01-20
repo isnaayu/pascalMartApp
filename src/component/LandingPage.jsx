@@ -34,7 +34,7 @@ function LandingPage() {
           className="lp-main-20"
           style={{ width: "20%", textAlign: "center" }}
         >
-            <Link to='/edit'>
+            <Link to='/editUser'>
             <button type="button" className="btn btn-outline-primary">
             Edit User
           </button>

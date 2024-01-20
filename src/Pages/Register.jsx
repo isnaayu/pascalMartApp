@@ -13,9 +13,9 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    addRegister();
-  }, []);
+  // useEffect(() => {
+  //   addRegister();
+  // }, []);
 
   const addRegister = async (e) => {
     e.preventDefault();
@@ -27,8 +27,10 @@ const Register = () => {
         password,
         gender,
       });
-
-      console.log(add);
+      console.log("Server response:", add);
+      if (add.status === 201) {
+        navigate("/login");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +41,7 @@ const Register = () => {
       <div className="l2">
         <Card>
           <CardBody>
-            <form onSubmit={addRegister}>
+            <form>
               <center className="l7">
                 <div>
                   <h1>Pascal Mart Admin</h1>
@@ -81,13 +83,15 @@ const Register = () => {
                 </div>
                 <div className="l6">
                   <Button
-                    onClick={() => navigate("/login")}
+                    onClick={addRegister}
                     type="submit"
                     colorScheme="green"
                   >
                     Create Account
                   </Button>
+                  
                 </div>
+                
               </div>
             </form>
           </CardBody>
