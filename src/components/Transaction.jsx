@@ -8,10 +8,16 @@ function Transaction() {
 
   useEffect(() => {
     if (trxs && trxs.length > 0) {
-      const latestTransaction = trxs[0];
+      const sortedTransactions = trxs.sort((a, b) => {
+        return parseInt(b.id) - parseInt(a.id);
+      });
+  
+      const latestTransaction = sortedTransactions[0];
       setLastTransaction(latestTransaction);
     }
   }, [trxs]);
+  
+  
 
   return (
     <>
@@ -21,9 +27,8 @@ function Transaction() {
             <tr>
               <th>No.</th>
               <th>Product Name</th>
-              <th>Price</th>
               <th>Quantity</th>
-              <th>Total Price</th>
+              <th>Sub Total</th>
             </tr>
           </thead>
           <tbody>
@@ -31,13 +36,17 @@ function Transaction() {
                 <tr key={index}>
                 <td>{lastTransaction.id}</td>
                 <td>{item.name}</td>
-                <td>{item.price}</td>
                 <td>{item.qty}</td>
-                <td>{lastTransaction.total_price}</td>
+                <td>{item.price}</td>
                 </tr>
             ))}
           </tbody>
         </Table>
+        {lastTransaction && (
+        <button className="btn btn-primary">
+          Total Price: {Math.floor(lastTransaction.total_price)}
+        </button>
+      )}
       </div>
     </>
   );

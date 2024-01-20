@@ -5,84 +5,101 @@ import useFetch from "./FetchData";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function InputData() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const [items, setItems] = useState([]);
-  const [dataTrx] = useFetch("http://localhost:8000/transactions");
-  const [newItems, setNewItems] = useState({ name: "", qty: "", price: 0 });
-  const [data, loading, error] = useFetch("http://localhost:8000/items");
-  const [newTransaction, setNewTransaction] = useState({
-    id: "",
-    items: [],
-    total_price: 0,
-  });
+    const [items, setItems] = useState([]);
+    const [newItems, setNewItems] = useState({ name: "", qty: "", price: 0 });
+    const [transactionData] = useFetch("http://localhost:8000/transactions")
+    const [newTransaction, setNewTransaction] = useState({
+      id: "",
+      items: [],
+      total_price: 0,
+    });
+    const [data, loading, error] = useFetch("http://localhost:8000/items");
+  
+    useEffect(() => {
+      get();
+    }, []);
+  
+    const get = async () => {
+      try {
+        const datas = await axios.get("http://localhost:8000/items");
+        console.log("hasil datas : ", datas);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  
+    useEffect(() => {
+      setItems(data);
+    }, [data]);
+  
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setNewItems({ ...newItems, [name]: value });
+    };
+  
+    const handleAddItems = (e) => {
+      e.preventDefault();
+  
+      const priceAsInteger = parseInt(newItems.price, 10);
+  
+      if (!isNaN(priceAsInteger)) {
+        const newItem = {
+          name: newItems.name,
+          qty: newItems.qty,
+          price: priceAsInteger,
+        };
+        setItems([...items, newItem]);
+        setNewItems({ name: "", qty: "", price: 0 });
+      }
+    };
+  
+    const handleBuy = async () => {
+      try {
+        // Kirim data pembelian dan items ke server
+        const response = await fetch("http://localhost:8000/transactions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: Date.now(),
+            items: items,
+            total_price: items.reduce((total, item) => total + item.price, 0),
+          }),
+        });
+  
+        if (response.ok) {
+          setItems([]);
+          setNewTransaction({
+            id: "",
+            items: [],
+            total_price: 0,
+          });
+          console.log("Transaction success");
+          navigate("/transaction"); // Redirect to the transaction page if needed
+        } else {
+          console.error("Transaction failed");
+        }
+      } catch (error) {
+        console.error("Fetch error", error);
+      }
+    };
+  
+    const handleDeleteItems = (index) => {
+      const updatedItems = [...items];
+      updatedItems.splice(index, 1);
+      setItems(updatedItems);
+    };
 
-  useEffect(() => {
-    get();
-  }, []);
-  const get = async () => {
-    try {
-      const datas = await axios.get("http://localhost:8000/items");
-      console.log("hasil datas : ", datas);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    setItems(data);
-  }, [data]);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewItems({ ...newItems, [name]: value });
-  };
-
-  const datas = [];
-
-  datas.push(items);
-  console.log(datas);
-
-  const handleAddItems = (e) => {
-    e.preventDefault();
-
-    const priceAsInteger = parseInt(newItems.price, 10);
-
-    if (!isNaN(priceAsInteger)) {
-      // Menyiapkan payload dengan price yang sudah diubah ke integer
-      const newItem = {
-        name: newItems.name,
-        qty: newItems.qty,
-        price: priceAsInteger,
-      };
-
-      setItems([...items, newItems]);
-
-      setNewItems({ name: "", qty: "", price: 0 });
-    }
-  };
-
-  const handleBuy = () => {
-    fetch("http://localhost:8000/items", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(items),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setItems([]);
-        console.log("success");
-      })
-      .catch((error) => console.error("Fetch error", error));
-  };
-
-  const handleDeleteItems = (index) => {
-    const updatedItems = [...items];
-    updatedItems.splice(index, 1);
-    setItems(updatedItems);
-  };
+    useEffect(() => {
+        if (transactionData) {
+          const dataLength = Object.keys(transactionData).length;
+          console.log("Length of transactionData:", dataLength);
+        }
+      }, [transactionData]);
+  
 
   return (
     <>

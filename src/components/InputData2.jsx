@@ -9,6 +9,7 @@ function InputData2() {
 
     const [items, setItems] = useState([]);
     const [newItems, setNewItems] = useState({ name: "", qty: "", price: 0 });
+    const [transactionData] = useFetch("http://localhost:8000/transactions")
     const [newTransaction, setNewTransaction] = useState({
       id: "",
       items: [],
@@ -91,10 +92,18 @@ function InputData2() {
       updatedItems.splice(index, 1);
       setItems(updatedItems);
     };
+
+    useEffect(() => {
+        if (transactionData) {
+          const dataLength = Object.keys(transactionData).length;
+          console.log("Length of transactionData:", dataLength);
+        }
+      }, [transactionData]);
   
 
   return (
     <>
+    {/* {console.log(Object.keys(transactionData).length)} */}
       <div className="card" style={{ width: "700px" }}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}

@@ -1,5 +1,19 @@
 {
-  "items": [],
+  "items": [
+    {
+      "0": {
+        "name": "ayam",
+        "qty": "2",
+        "price": "30000"
+      },
+      "1": {
+        "name": "timun",
+        "qty": "2",
+        "price": "20000"
+      },
+      "id": "71f0"
+    }
+  ],
   "users": [
     {
       "id": "7a4e",
@@ -22,7 +36,7 @@
   ],
   "transactions": [
     {
-      "id": 1705572715827,
+      "id": "1705572715827",
       "items": [
         {
           "name": "mie",
@@ -38,7 +52,7 @@
       "total_price": 20000
     },
     {
-      "id": 1705573011448,
+      "id": "1705573011448",
       "items": [
         {
           "name": "tono",
@@ -52,6 +66,54 @@
         }
       ],
       "total_price": 20000
+    },
+    {
+      "id": 1705736664350,
+      "items": [
+        {
+          "name": "ayam potong",
+          "qty": "2",
+          "price": 20000
+        },
+        {
+          "name": "sendok",
+          "qty": "1",
+          "price": 5000
+        }
+      ],
+      "total_price": 25000
+    },
+    {
+      "id": 1705752898637,
+      "items": [
+        {
+          "name": "timun",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "ayam",
+          "qty": "2",
+          "price": 10000
+        }
+      ],
+      "total_price": 20000
+    },
+    {
+      "id": 1705753104090,
+      "items": [
+        {
+          "name": "babi",
+          "qty": "2",
+          "price": 10000
+        },
+        {
+          "name": "sendal",
+          "qty": "2",
+          "price": 20000
+        }
+      ],
+      "total_price": 30000
     }
   ]
 }
